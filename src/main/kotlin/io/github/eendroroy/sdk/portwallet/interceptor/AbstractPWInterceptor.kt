@@ -29,9 +29,9 @@ abstract class AbstractPWInterceptor : PWInterceptor {
             val buffer = source.buffer.clone()
             buffer.readUtf8()
         } catch (e: IOException) {
-            "<->"
+            e.localizedMessage
         } catch (e: IllegalStateException) {
-            "<->"
+            e.localizedMessage
         }
     }
 
@@ -43,7 +43,9 @@ abstract class AbstractPWInterceptor : PWInterceptor {
             body.writeTo(buffer)
             buffer.readUtf8()
         } catch (e: IOException) {
-            "<->"
+            e.localizedMessage
+        } catch (e: IllegalStateException) {
+            e.localizedMessage
         }
     }
 }

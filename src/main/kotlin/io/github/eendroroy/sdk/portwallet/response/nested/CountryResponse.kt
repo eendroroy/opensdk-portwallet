@@ -18,4 +18,7 @@ data class CountryResponse(
     @JsonProperty("name") var name: String? = null,
     @JsonProperty("iso2") var iso2: String? = null,
     @JsonProperty("iso3") var iso3: String? = null,
-) : BaseResponse
+) : BaseResponse() {
+    override fun httpResponseCode(code: Int) = this.apply { this.httpResponseCode = code }
+    override fun httpResponseMessage(message: String) = apply { this.httpResponseMessage = message }
+}

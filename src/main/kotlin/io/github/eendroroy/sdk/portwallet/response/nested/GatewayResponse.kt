@@ -21,4 +21,7 @@ data class GatewayResponse(
     @JsonProperty("transaction_id") var transaction_id: String? = null,
     @JsonProperty("approve_code") var approveCode: String? = null,
     @JsonProperty("reason") var reason: String? = null,
-) : BaseResponse
+) : BaseResponse() {
+    override fun httpResponseCode(code: Int) = this.apply { this.httpResponseCode = code }
+    override fun httpResponseMessage(message: String) = apply { this.httpResponseMessage = message }
+}

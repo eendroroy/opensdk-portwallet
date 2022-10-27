@@ -19,4 +19,7 @@ data class ActionResponse(
     @JsonProperty("url") var url: String? = null,
     @JsonProperty("payload") var payload: Any? = null,
     @JsonProperty("method") var method: String? = null,
-) : BaseResponse
+) : BaseResponse() {
+    override fun httpResponseCode(code: Int) = this.apply { this.httpResponseCode = code }
+    override fun httpResponseMessage(message: String) = apply { this.httpResponseMessage = message }
+}

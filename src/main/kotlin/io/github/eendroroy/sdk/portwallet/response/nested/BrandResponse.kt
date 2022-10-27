@@ -18,4 +18,7 @@ data class BrandResponse(
     @JsonProperty("name") var name: String? = null,
     @JsonProperty("type") var type: String? = null,
     @JsonProperty("category") var category: String? = null,
-) : BaseResponse
+) : BaseResponse() {
+    override fun httpResponseCode(code: Int) = this.apply { this.httpResponseCode = code }
+    override fun httpResponseMessage(message: String) = apply { this.httpResponseMessage = message }
+}

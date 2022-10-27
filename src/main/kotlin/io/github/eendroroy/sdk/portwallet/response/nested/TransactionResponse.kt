@@ -14,4 +14,7 @@ data class TransactionResponse(
     @JsonProperty("status") var status: String? = null,
     @JsonProperty("type") var type: String? = null,
     @JsonProperty("time") var time: String? = null,
-) : BaseResponse
+) : BaseResponse() {
+    override fun httpResponseCode(code: Int) = this.apply { this.httpResponseCode = code }
+    override fun httpResponseMessage(message: String) = apply { this.httpResponseMessage = message }
+}

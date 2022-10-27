@@ -13,4 +13,7 @@ data class SourceResponse(
     @JsonProperty("number") var number: String? = null,
     @JsonProperty("brand") var brand: BrandResponse? = null,
     @JsonProperty("issuer") var issuer: IssuerResponse? = null,
-) : BaseResponse
+) : BaseResponse() {
+    override fun httpResponseCode(code: Int) = this.apply { this.httpResponseCode = code }
+    override fun httpResponseMessage(message: String) = apply { this.httpResponseMessage = message }
+}

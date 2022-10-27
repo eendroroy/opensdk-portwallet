@@ -19,4 +19,7 @@ data class CustomerResponse(
     @JsonProperty("email") var email: String? = null,
     @JsonProperty("phone") var phone: String? = null,
     @JsonProperty("address") var address: AddressResponse? = null,
-) : BaseResponse
+) : BaseResponse() {
+    override fun httpResponseCode(code: Int) = this.apply { this.httpResponseCode = code }
+    override fun httpResponseMessage(message: String) = apply { this.httpResponseMessage = message }
+}

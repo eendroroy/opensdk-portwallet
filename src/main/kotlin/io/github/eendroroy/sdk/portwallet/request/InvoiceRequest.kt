@@ -23,4 +23,4 @@ data class InvoiceRequest(
     @JsonProperty("discount") var discount: DiscountRequest? = null,
     @JsonProperty("emi") var emi: EmiRequest? = null,
     @JsonProperty("customs") var customs: List<Map<String, String>>? = null,
-)
+): BaseRequest

@@ -13,4 +13,7 @@ data class PayerResponse(
     @JsonProperty("account") var account: String? = null,
     @JsonProperty("ip_address") var ip_address: String? = null,
     @JsonProperty("user_agent") var user_agent: String? = null,
-) : BaseResponse
+) : BaseResponse() {
+    override fun httpResponseCode(code: Int) = this.apply { this.httpResponseCode = code }
+    override fun httpResponseMessage(message: String) = apply { this.httpResponseMessage = message }
+}

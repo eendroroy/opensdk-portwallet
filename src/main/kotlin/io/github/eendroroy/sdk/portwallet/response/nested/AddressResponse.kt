@@ -20,4 +20,7 @@ data class AddressResponse(
     @JsonProperty("state") var state: Any? = null,
     @JsonProperty("zipcode") var zipcode: Any? = null,
     @JsonProperty("country") var country: String? = null,
-) : BaseResponse
+) : BaseResponse() {
+    override fun httpResponseCode(code: Int) = this.apply { this.httpResponseCode = code }
+    override fun httpResponseMessage(message: String) = apply { this.httpResponseMessage = message }
+}

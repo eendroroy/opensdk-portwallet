@@ -18,4 +18,7 @@ data class EmiResponse(
     @JsonProperty("partner") var partner: String? = null,
     @JsonProperty("tenor") var tenor: String? = null,
     @JsonProperty("is_used") var isUsed: Int? = null,
-) : BaseResponse
+) : BaseResponse() {
+    override fun httpResponseCode(code: Int) = this.apply { this.httpResponseCode = code }
+    override fun httpResponseMessage(message: String) = apply { this.httpResponseMessage = message }
+}

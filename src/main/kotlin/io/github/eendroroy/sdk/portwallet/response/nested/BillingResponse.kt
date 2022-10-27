@@ -19,4 +19,7 @@ data class BillingResponse(
     @JsonProperty("payer") var payer: PayerResponse? = null,
     @JsonProperty("gateway") var gateway: GatewayResponse? = null,
     @JsonProperty("source") var source: SourceResponse? = null,
-) : BaseResponse
+) : BaseResponse() {
+    override fun httpResponseCode(code: Int) = this.apply { this.httpResponseCode = code }
+    override fun httpResponseMessage(message: String) = apply { this.httpResponseMessage = message }
+}

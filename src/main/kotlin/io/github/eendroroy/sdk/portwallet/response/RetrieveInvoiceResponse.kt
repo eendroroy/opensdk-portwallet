@@ -13,7 +13,7 @@ data class RetrieveInvoiceResponse(
     @JsonProperty("result") var result: String? = null,
     @JsonProperty("data") var data: DataResponse? = null,
     @JsonProperty("error") var error: ErrorResponse? = null,
-) : BaseResponse {
-    var responseCode: String? = null
-    var responseMessage: String? = null
+) : BaseResponse() {
+    override fun httpResponseCode(code: Int) = this.apply { this.httpResponseCode = code }
+    override fun httpResponseMessage(message: String) = apply { this.httpResponseMessage = message }
 }

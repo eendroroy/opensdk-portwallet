@@ -13,4 +13,7 @@ data class IssuerResponse(
     @JsonProperty("phone") var phone: String? = null,
     @JsonProperty("website") var website: String? = null,
     @JsonProperty("country") var country: CountryResponse? = null,
-) : BaseResponse
+) : BaseResponse() {
+    override fun httpResponseCode(code: Int) = this.apply { this.httpResponseCode = code }
+    override fun httpResponseMessage(message: String) = apply { this.httpResponseMessage = message }
+}

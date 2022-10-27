@@ -44,22 +44,22 @@ class PWApiClient @JvmOverloads constructor(
     }
 
     @Throws(Exception::class)
-    fun createInvoice(request: InvoiceRequest?): InvoiceResponse {
+    fun createInvoice(request: InvoiceRequest): InvoiceResponse? {
         return client.createInvoice(request)
     }
 
     @Throws(Exception::class)
-    fun ipnValidate(invoiceId: String?, amount: Double?): IpnValidateResponse {
+    fun ipnValidate(invoiceId: String, amount: Double): IpnValidateResponse? {
         return client.ipnValidate(invoiceId, amount)
     }
 
     @Throws(Exception::class)
-    fun retrieveInvoice(invoiceId: String?): RetrieveInvoiceResponse {
+    fun retrieveInvoice(invoiceId: String): RetrieveInvoiceResponse? {
         return client.retrieveInvoice(invoiceId)
     }
 
     @Throws(Exception::class)
-    fun refundInvoice(request: RefundInvoiceRequest?, invoiceId: String?): RefundInvoiceResponse {
+    fun refundInvoice(request: RefundInvoiceRequest, invoiceId: String): RefundInvoiceResponse? {
         return client.refundInvoice(request, invoiceId)
     }
 }

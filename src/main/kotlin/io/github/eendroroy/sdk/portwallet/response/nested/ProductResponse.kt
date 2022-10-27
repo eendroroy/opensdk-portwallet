@@ -17,4 +17,7 @@ import lombok.ToString
 data class ProductResponse(
     @JsonProperty("name") var name: String? = null,
     @JsonProperty("description") var description: String? = null,
-) : BaseResponse
+) : BaseResponse() {
+    override fun httpResponseCode(code: Int) = this.apply { this.httpResponseCode = code }
+    override fun httpResponseMessage(message: String) = apply { this.httpResponseMessage = message }
+}

@@ -11,4 +11,7 @@ import io.github.eendroroy.sdk.portwallet.response.BaseResponse
 data class RefundResponse(
     @JsonProperty("amount") var amount: Double? = null,
     @JsonProperty("status") var status: String? = null,
-) : BaseResponse
+) : BaseResponse() {
+    override fun httpResponseCode(code: Int) = this.apply { this.httpResponseCode = code }
+    override fun httpResponseMessage(message: String) = apply { this.httpResponseMessage = message }
+}

@@ -21,4 +21,7 @@ data class OrderResponse(
     @JsonProperty("created_at") var createdAt: String? = null,
     @JsonProperty("status") var status: String? = null,
     @JsonProperty("emi") var emi: EmiResponse? = null,
-) : BaseResponse
+) : BaseResponse() {
+    override fun httpResponseCode(code: Int) = this.apply { this.httpResponseCode = code }
+    override fun httpResponseMessage(message: String) = apply { this.httpResponseMessage = message }
+}

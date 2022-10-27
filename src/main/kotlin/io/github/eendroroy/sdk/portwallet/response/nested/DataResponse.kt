@@ -25,4 +25,7 @@ data class DataResponse(
     @JsonProperty("action") var action: ActionResponse? = null,
     @JsonProperty("transactions") var transactions: List<TransactionResponse>? = null,
     @JsonProperty("customs") var customs: List<Map<String, Any>>? = null,
-) : BaseResponse
+) : BaseResponse() {
+    override fun httpResponseCode(code: Int) = this.apply { this.httpResponseCode = code }
+    override fun httpResponseMessage(message: String) = apply { this.httpResponseMessage = message }
+}
