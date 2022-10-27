@@ -1,8 +1,8 @@
 package io.github.eendroroy.sdk.portwallet.util
 
 import io.github.eendroroy.sdk.portwallet.config.PWConfiguration
-import io.github.eendroroy.sdk.portwallet.request.InvoiceRequest
 import io.github.eendroroy.sdk.portwallet.request.CompactInvoiceRequest
+import io.github.eendroroy.sdk.portwallet.request.InvoiceRequest
 import io.github.eendroroy.sdk.portwallet.request.nested.AddressRequest
 import io.github.eendroroy.sdk.portwallet.request.nested.BillingRequest
 import io.github.eendroroy.sdk.portwallet.request.nested.CustomerRequest

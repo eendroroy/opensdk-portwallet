@@ -1,7 +1,7 @@
 package io.github.eendroroy.sdk.portwallet.util
 
 import java.security.MessageDigest
-import java.util.*
+import java.util.Locale
 
 fun String.md5(): String = MessageDigest.getInstance("MD5").let {
     it.update(this.toByteArray())

@@ -14,4 +14,4 @@ data class CompactInvoiceRequest(
     @JsonProperty("customer_name") var customerName: String? = null,
     @JsonProperty("customer_email") var customerEmail: String? = null,
     @JsonProperty("reference") var reference: String? = null
-): BaseRequest
+) : BaseRequest

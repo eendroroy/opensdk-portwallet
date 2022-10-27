@@ -28,15 +28,12 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-jackson:2.9.0")
     implementation("commons-codec:commons-codec:1.15")
-    implementation("org.projectlombok:lombok:1.18.24")
-    implementation("joda-time:joda-time:2.12.0")
 }
 
 group = "io.github.eendroroy"
 version = "0.0.1-alpha1"
 
-val isReleaseVersion = true
-val useGpgAgent = project.findProperty("signing.useGpgAgent")?.toString()?.toBoolean() ?: false
+val isReleaseVersion = !"$version".endsWith("SNAPSHOT")
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
@@ -114,8 +111,5 @@ publishing {
 
 signing {
     gradle.taskGraph.whenReady { isRequired = isReleaseVersion }
-    if (useGpgAgent) {
-        useGpgCmd()
-    }
     sign(publishing.publications["mavenJava"])
 }
