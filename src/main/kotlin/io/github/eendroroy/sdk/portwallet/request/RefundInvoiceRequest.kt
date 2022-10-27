@@ -11,5 +11,5 @@ import io.github.eendroroy.sdk.portwallet.request.nested.RefundRequest
 @JsonRootName("invoice")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 data class RefundInvoiceRequest(
-    @JsonProperty("refund") var refund: RefundRequest? = null,
+    @field:JsonProperty("refund") var refund: RefundRequest? = null,
 ) : BaseRequest

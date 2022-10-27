@@ -13,7 +13,7 @@ import io.github.eendroroy.sdk.portwallet.request.nested.ShippingRequest
 /**
  * @author indrajit
  */
-class RequestFactory private constructor() {
+internal class RequestFactory private constructor() {
     private var configuration: PWConfiguration? = null
     private fun withConfiguration(configuration: PWConfiguration): RequestFactory {
         this.configuration = configuration

@@ -10,7 +10,7 @@ import javax.net.ssl.X509TrustManager
 /**
  * @author indrajit
  */
-object UnsafeOkHttpClientBuilder {
+internal object UnsafeOkHttpClientBuilder {
     @JvmStatic
     val unsafeOkHttpClientBuilder: OkHttpClient.Builder
         get() = try {

@@ -8,6 +8,6 @@ import com.fasterxml.jackson.annotation.JsonRootName
  */
 @JsonRootName("discount")
 data class DiscountRequest(
-    @JsonProperty("enable") var enable: Int? = null,
-    @JsonProperty("codes") var codes: List<String>? = null,
+    @field:JsonProperty("enable") var enable: Int? = null,
+    @field:JsonProperty("codes") var codes: List<String>? = null,
 )

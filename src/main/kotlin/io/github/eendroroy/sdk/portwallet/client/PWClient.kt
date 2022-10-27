@@ -10,7 +10,7 @@ import io.github.eendroroy.sdk.portwallet.response.RetrieveInvoiceResponse
 /**
  * @author indrajit
  */
-interface PWClient {
+internal interface PWClient {
     fun createInvoice(request: InvoiceRequest): InvoiceResponse?
     fun ipnValidate(invoiceId: String, amount: Double): IpnValidateResponse?
     fun retrieveInvoice(invoiceId: String?): RetrieveInvoiceResponse?

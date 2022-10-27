@@ -23,6 +23,7 @@ buildscript {
 }
 
 dependencies {
+    dokkaHtmlPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.7.20")
     implementation(kotlin("stdlib-jdk8"))
     implementation(kotlin("reflect"))
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
@@ -30,7 +31,8 @@ dependencies {
 }
 
 group = "io.github.eendroroy"
-version = "0.0.1-alpha1"
+version = "0.0.1-alpha2"
+description = "PortWallet SDK"
 
 val isReleaseVersion = !"$version".endsWith("SNAPSHOT")
 
@@ -44,7 +46,7 @@ java {
 
 tasks {
     dokkaJavadoc {
-        outputDirectory.set(file("$buildDir/docs"))
+        outputDirectory.set(file("$buildDir/docs/javadoc"))
     }
 
     javadoc {
@@ -67,7 +69,7 @@ publishing {
 
             pom {
                 name.set(project.name)
-                description.set("PortWallet SDK")
+                description.set(project.description)
                 url.set("https://github.com/eendroroy/opensdk-portwallet.git")
 
                 licenses {

@@ -8,9 +8,9 @@ import com.fasterxml.jackson.annotation.JsonRootName
  */
 @JsonRootName("order")
 data class OrderRequest(
-    @JsonProperty("amount") var amount: Double? = null,
-    @JsonProperty("currency") var currency: String? = null,
-    @JsonProperty("redirect_url") var redirectUrl: String? = null,
-    @JsonProperty("ipn_url") var ipnUrl: String? = null,
-    @JsonProperty("reference") var reference: String? = null,
+    @field:JsonProperty("amount") var amount: Double? = null,
+    @field:JsonProperty("currency") var currency: String? = null,
+    @field:JsonProperty("redirect_url") var redirectUrl: String? = null,
+    @field:JsonProperty("ipn_url") var ipnUrl: String? = null,
+    @field:JsonProperty("reference") var reference: String? = null,
 )

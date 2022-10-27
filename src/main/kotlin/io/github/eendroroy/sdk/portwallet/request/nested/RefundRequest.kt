@@ -8,6 +8,6 @@ import com.fasterxml.jackson.annotation.JsonRootName
  */
 @JsonRootName("refund")
 data class RefundRequest(
-    @JsonProperty("amount") var amount: Int? = null,
-    @JsonProperty("currency") var currency: String? = null,
+    @field:JsonProperty("amount") var amount: Int? = null,
+    @field:JsonProperty("currency") var currency: String? = null,
 )

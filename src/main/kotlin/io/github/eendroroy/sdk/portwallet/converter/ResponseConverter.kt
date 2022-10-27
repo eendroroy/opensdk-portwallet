@@ -7,7 +7,7 @@ import retrofit2.Retrofit
 /**
  * @author indrajit
  */
-class ResponseConverter<T>(var retrofit: Retrofit, var apiResponse: Response<T>) {
+internal class ResponseConverter<T>(var retrofit: Retrofit, var apiResponse: Response<T>) {
     inline fun <reified T> convert(): T? {
         val response: T? = when {
             apiResponse.isSuccessful -> {

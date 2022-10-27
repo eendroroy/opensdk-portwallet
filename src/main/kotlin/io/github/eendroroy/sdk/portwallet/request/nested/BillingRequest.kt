@@ -8,5 +8,5 @@ import com.fasterxml.jackson.annotation.JsonRootName
  */
 @JsonRootName("billing")
 data class BillingRequest(
-    @JsonProperty("customer") var customer: CustomerRequest? = null,
+    @field:JsonProperty("customer") var customer: CustomerRequest? = null,
 )

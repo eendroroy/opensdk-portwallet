@@ -8,6 +8,6 @@ import com.fasterxml.jackson.annotation.JsonRootName
  */
 @JsonRootName("product")
 data class ProductRequest(
-    @JsonProperty("name") var name: String = "Payment",
-    @JsonProperty("description") var description: String = "Payment",
+    @field:JsonProperty("name") var name: String = "Payment",
+    @field:JsonProperty("description") var description: String = "Payment",
 )

@@ -8,6 +8,6 @@ import com.fasterxml.jackson.annotation.JsonRootName
  */
 @JsonRootName("emi")
 data class EmiRequest(
-    @JsonProperty("enable") var enable: Int? = null,
-    @JsonProperty("tenure") var tenure: List<String>? = null,
+    @field:JsonProperty("enable") var enable: Int? = null,
+    @field:JsonProperty("tenures") var tenures: List<Int>? = null,
 )

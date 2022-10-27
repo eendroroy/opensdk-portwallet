@@ -16,7 +16,7 @@ import retrofit2.http.Path
 /**
  * @author indrajit
  */
-interface PWEndpoints {
+internal interface PWEndpoints {
     @POST("/payment/v2/invoice")
     fun createInvoice(
         @HeaderMap headers: Map<String?, String?>?,

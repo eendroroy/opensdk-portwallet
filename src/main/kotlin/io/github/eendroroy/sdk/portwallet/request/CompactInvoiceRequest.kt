@@ -8,10 +8,10 @@ import com.fasterxml.jackson.annotation.JsonRootName
  */
 @JsonRootName("invoice")
 data class CompactInvoiceRequest(
-    @JsonProperty("amount") var amount: Double? = null,
-    @JsonProperty("customer_phone") var customerPhone: String? = null,
-    @JsonProperty("currency") var currency: String? = null,
-    @JsonProperty("customer_name") var customerName: String? = null,
-    @JsonProperty("customer_email") var customerEmail: String? = null,
-    @JsonProperty("reference") var reference: String? = null
+    @field:JsonProperty("amount") var amount: Double? = null,
+    @field:JsonProperty("customer_phone") var customerPhone: String? = null,
+    @field:JsonProperty("currency") var currency: String? = null,
+    @field:JsonProperty("customer_name") var customerName: String? = null,
+    @field:JsonProperty("customer_email") var customerEmail: String? = null,
+    @field:JsonProperty("reference") var reference: String? = null
 ) : BaseRequest
