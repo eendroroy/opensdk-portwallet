@@ -1,5 +1,6 @@
 package io.github.eendroroy.sdk.portwallet
 
+import io.github.eendroroy.sdk.portwallet.client.PWClient
 import io.github.eendroroy.sdk.portwallet.client.PWPaymentClient
 import io.github.eendroroy.sdk.portwallet.client.UnsafeOkHttpClientBuilder.unsafeOkHttpClientBuilder
 import io.github.eendroroy.sdk.portwallet.config.DefaultPWAuthProvider
@@ -24,7 +25,7 @@ class PWApiClient @JvmOverloads constructor(
     configuration: PWConfiguration,
     interceptor: PWInterceptor = DefaultPWInterceptor()
 ) {
-    private val client: PWPaymentClient
+    private val client: PWClient
     private val authProvider: PWAuthProvider
 
     init {

@@ -16,7 +16,7 @@ import retrofit2.Retrofit
 /**
  * @author indrajit
  */
-class PWPaymentClient(
+internal class PWPaymentClient(
     private val retrofit: Retrofit,
     private val configuration: PWConfiguration,
     private val authProvider: PWAuthProvider
@@ -33,25 +33,25 @@ class PWPaymentClient(
         }
 
     @Throws(Exception::class)
-    fun createInvoice(request: InvoiceRequest): InvoiceResponse? {
+    override fun createInvoice(request: InvoiceRequest): InvoiceResponse? {
         val apiResponse: Response<InvoiceResponse> = endpoints.createInvoice(headers, request)!!.execute()
         return ResponseConverter(retrofit, apiResponse).convert()
     }
 
     @Throws(Exception::class)
-    fun ipnValidate(invoiceId: String, amount: Double): IpnValidateResponse? {
+    override fun ipnValidate(invoiceId: String, amount: Double): IpnValidateResponse? {
         val apiResponse: Response<IpnValidateResponse> = endpoints.ipnValidate(headers, invoiceId, amount)!!.execute()
         return ResponseConverter(retrofit, apiResponse).convert()
     }
 
     @Throws(Exception::class)
-    fun retrieveInvoice(invoiceId: String?): RetrieveInvoiceResponse? {
+    override fun retrieveInvoice(invoiceId: String?): RetrieveInvoiceResponse? {
         val apiResponse: Response<RetrieveInvoiceResponse> = endpoints.retrieveInvoice(headers, invoiceId)!!.execute()
         return ResponseConverter(retrofit, apiResponse).convert()
     }
 
     @Throws(Exception::class)
-    fun refundInvoice(request: RefundInvoiceRequest, invoiceId: String): RefundInvoiceResponse? {
+    override fun refundInvoice(request: RefundInvoiceRequest, invoiceId: String): RefundInvoiceResponse? {
         val apiResponse: Response<RefundInvoiceResponse> = endpoints.refundInvoice(headers, request, invoiceId)!!
             .execute()
         return ResponseConverter(retrofit, apiResponse).convert()

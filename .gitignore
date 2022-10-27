@@ -2,7 +2,7 @@ HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**
-/src/testImpl
+src/test/*/io/github/eendroroy/sdk/portwallet/local/**/*
 .gradle
 
 ### STS ###
