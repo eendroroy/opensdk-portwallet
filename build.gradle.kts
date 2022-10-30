@@ -33,7 +33,7 @@ dependencies {
 }
 
 group = "io.github.eendroroy"
-version = "0.0.1-alpha2"
+version = "1.0.0-beta1"
 description = "PortWallet SDK"
 
 val isReleaseVersion = !"$version".endsWith("SNAPSHOT")

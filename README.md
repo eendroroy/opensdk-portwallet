@@ -25,7 +25,7 @@ Implementation of [PortWallet PaymentGateway API](https://developer.portwallet.c
 <dependency>
     <groupId>io.github.eendroroy</groupId>
     <artifactId>opensdk-portwallet</artifactId>
-    <version>0.0.1-alpha2</version>
+    <version>1.0.0-beta1</version>
 </dependency>
 ```
 
@@ -33,7 +33,7 @@ Implementation of [PortWallet PaymentGateway API](https://developer.portwallet.c
 
 ```groovy
 dependencies {
-    implementation("io.github.eendroroy:opensdk-portwallet:0.0.1-alpha2")
+    implementation("io.github.eendroroy:opensdk-portwallet:1.0.0-beta1")
 }
 ```
 
